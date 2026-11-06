@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Foto Geraldo</title>
+  <title>Portofolio Geraldo</title>
   <style>
     * {
       box-sizing: border-box;
@@ -20,7 +20,6 @@
       flex-direction: column;
     }
 
-    /* Header menempel di atas saat halaman di-scroll */
     header {
       position: sticky;
       top: 0;
@@ -32,7 +31,6 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* Footer menempel di bawah layar */
     footer {
       position: sticky;
       bottom: 0;
@@ -50,7 +48,6 @@
       padding: 24px 16px;
     }
 
-    /* Wadah kartu memakai flexbox */
     .flex-container {
       display: flex;
       flex-wrap: wrap;
@@ -61,7 +58,7 @@
     }
 
     .card {
-      flex: 0 1 320px;
+      flex: 0 1 260px;
       background-color: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
@@ -72,25 +69,23 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    /* Efek saat kartu di-hover: naik sedikit, membesar, dan bersinar */
     .card:hover {
       transform: translateY(-4px) scale(1.03);
       border-color: rgba(249, 115, 22, 0.4);
       box-shadow: 0 10px 24px rgba(249, 115, 22, 0.18), 0 0 14px rgba(251, 146, 60, 0.28);
     }
 
-    /* Foto aslinya berbentuk potret, jadi tingginya dibuat lebih besar */
     .card img {
       width: 100%;
-      height: 400px;
+      height: 180px;
       object-fit: cover;
       display: block;
     }
 
     .card p {
       padding: 12px 14px;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.85rem;
+      line-height: 1.4;
       color: #475569;
     }
   </style>
@@ -102,59 +97,35 @@
   </header>
 
   <main>
-    <!-- Kartu foto dibuat otomatis oleh JavaScript di bawah (lihat bagian <script>) -->
-    <div class="flex-container" id="galeri"></div>
+    <div class="flex-container">
+      <div class="card">
+        <img src="gambar/gambar1.jpg" alt="Karya utamanya adalah patung kayu berwarna cerah berupa seorang anak yang berdiri menunduk di atas alas kayu bundar. Kepalanya tertutup helm merah besar berbentuk bulat seperti apel, dan wajahnya mengintip dari bawahnya. Ia memakai kacamata kuning, matanya terpejam, dan senyumnya tipis. Ia mengenakan overall biru dengan saku kuning, kaus hijau mint, serta sarung tangan dan sepatu merah yang proporsinya dibesarkan. Pahatan yang tegas dengan permukaan mengilap dan warna-warna primer memberi kesan lucu sekaligus melankolis, seperti anak yang pemalu atau sedang merenung.
+
+Di dinding belakangnya ada figur-figur kecil di atas rak kayu: karakter berkepala rubah dengan pakaian rajut, sosok berkepala labu, jamur biru, dan anak berkacamata dengan overall cokelat. Gayanya khas pop surrealism/art toy yang bernuansa dongeng.">
+        <p>Karya utamanya adalah patung kayu berwarna cerah berupa seorang anak yang berdiri menunduk di atas alas kayu bundar. Kepalanya tertutup helm merah besar berbentuk bulat seperti apel, dan wajahnya mengintip dari bawahnya. Ia memakai kacamata kuning, matanya terpejam, dan senyumnya tipis. Ia mengenakan overall biru dengan saku kuning, kaus hijau mint, serta sarung tangan dan sepatu merah yang proporsinya dibesarkan. Pahatan yang tegas dengan permukaan mengilap dan warna-warna primer memberi kesan lucu sekaligus melankolis, seperti anak yang pemalu atau sedang merenung.
+
+Di dinding belakangnya ada figur-figur kecil di atas rak kayu: karakter berkepala rubah dengan pakaian rajut, sosok berkepala labu, jamur biru, dan anak berkacamata dengan overall cokelat. Gayanya khas pop surrealism/art toy yang bernuansa dongeng.</p>
+      </div>
+
+      <div class="card">
+        <img src="gambar/gambar2.jpg" alt="Patung berwarna gelap ini jelas terinspirasi dari Candi Borobudur. Bagian atasnya padat dengan stupa berlubang-lubang berpola belah ketupat, dengan satu stupa utama menjulang di puncak. Bagian bawahnya justru “meleleh” menjadi jaring-jaring dan taji logam yang menjuntai seperti stalaktit atau tirai, sehingga bangunan tampak melayang atau rapuh. Material logamnya bernuansa perunggu/tembaga dengan patina gelap, dan ada ornamen ukir kecil di beberapa sisi. Pencahayaan temaram dan bayangan siluet candi di dinding memperkuat kesan monumental sekaligus muram. Karya ini bisa dibaca sebagai refleksi tentang warisan budaya yang agung tetapi rentan, terkikis, atau terlepas dari pijakannya.">
+        <p>Patung berwarna gelap ini jelas terinspirasi dari Candi Borobudur. Bagian atasnya padat dengan stupa berlubang-lubang berpola belah ketupat, dengan satu stupa utama menjulang di puncak. Bagian bawahnya justru “meleleh” menjadi jaring-jaring dan taji logam yang menjuntai seperti stalaktit atau tirai, sehingga bangunan tampak melayang atau rapuh. Material logamnya bernuansa perunggu/tembaga dengan patina gelap, dan ada ornamen ukir kecil di beberapa sisi. Pencahayaan temaram dan bayangan siluet candi di dinding memperkuat kesan monumental sekaligus muram. Karya ini bisa dibaca sebagai refleksi tentang warisan budaya yang agung tetapi rentan, terkikis, atau terlepas dari pijakannya.</p>
+      </div>
+
+      <div class="card">
+        <img src="gambar/gambar3.jpg" alt="Karya ini berbentuk struktur segitiga seperti atap atau tubuh makhluk hibrida. Permukaannya tersusun dari ratusan genteng keramik putih berlukis biru kobalt, bergaya porselen biru-putih dengan motif flora, naga, dan ornamen. Di bagian depan ada kepala patung berwajah halus dengan tahi lalat dan alis tegas, mengenakan tudung dan ikat kepala terakota bermotif ukiran bunga. Di punggungnya mencuat sepasang sayap terakota, seperti makhluk mitologi (mirip sfinks atau burung). Sisi bawahnya dihiasi lukisan bunga, termasuk bunga kecombrang atau torch ginger, yang khas tropis. Di sekelilingnya tersebar bantal dan bentuk menyerupai kelopak dari keramik putih bermotif awan (megamendung) berwarna biru, di atas panggung putih bundar. Karya ini memadukan banyak lapisan budaya, seperti tradisi keramik Tiongkok, flora tropis Nusantara, dan mitologi. Itu sejalan dengan sejarah Indonesia sebagai simpul pertemuan budaya dagang.
+
+Kalau Anda tahu atau ingat lokasi pamerannya, saya bisa bantu mencari nama seniman dan judul karyanya.">
+        <p>Karya ini berbentuk struktur segitiga seperti atap atau tubuh makhluk hibrida. Permukaannya tersusun dari ratusan genteng keramik putih berlukis biru kobalt, bergaya porselen biru-putih dengan motif flora, naga, dan ornamen. Di bagian depan ada kepala patung berwajah halus dengan tahi lalat dan alis tegas, mengenakan tudung dan ikat kepala terakota bermotif ukiran bunga. Di punggungnya mencuat sepasang sayap terakota, seperti makhluk mitologi (mirip sfinks atau burung). Sisi bawahnya dihiasi lukisan bunga, termasuk bunga kecombrang atau torch ginger, yang khas tropis. Di sekelilingnya tersebar bantal dan bentuk menyerupai kelopak dari keramik putih bermotif awan (megamendung) berwarna biru, di atas panggung putih bundar. Karya ini memadukan banyak lapisan budaya, seperti tradisi keramik Tiongkok, flora tropis Nusantara, dan mitologi. Itu sejalan dengan sejarah Indonesia sebagai simpul pertemuan budaya dagang.
+
+Kalau Anda tahu atau ingat lokasi pamerannya, saya bisa bantu mencari nama seniman dan judul karyanya.</p>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; Portofolio Foto Geraldo</p>
+    <p>&copy; Geraldo Timothy</p>
   </footer>
-
-  <script>
-    // Nama folder tempat foto disimpan (harus sama persis dengan nama folder di GitHub)
-    var folderGambar = "images/";
-
-    // Daftar foto: nama file, teks alternatif, dan keterangan.
-    // Kalau mau menambah foto, tinggal tambah satu blok { ... } baru.
-    var daftarFoto = [
-      {
-        file: "foto-1.jpg",
-        alt: "Patung kayu anak berhelm merah di galeri",
-        keterangan: "Patung kayu seorang anak dengan kepala besar berwarna merah, kacamata kuning, dan baju terusan biru. Patung ini berdiri di atas alas kayu bulat. Di dinding belakangnya ada rak-rak kecil berisi patung mungil, seperti rubah dan jamur."
-      },
-      {
-        file: "foto-2.jpg",
-        alt: "Patung logam bentuk stupa bergaya Borobudur",
-        keterangan: "Karya patung berwarna gelap dengan banyak stupa bergaya candi, mirip Borobudur. Bagian bawahnya menjuntai seperti tetesan dan jaring logam. Pencahayaan yang redup membuat bayangannya jatuh ke dinding di belakang."
-      },
-      {
-        file: "foto-3.jpg",
-        alt: "Instalasi keramik atap genteng biru putih dengan patung kepala",
-        keterangan: "Instalasi keramik berbentuk atap dari genteng bermotif biru putih, dengan patung kepala berwarna terakota dan sayap di bagian belakang. Di sekelilingnya ada bantal keramik bermotif pusaran, diletakkan di atas panggung putih bundar."
-      }
-    ];
-
-    var galeri = document.getElementById("galeri");
-
-    // Perulangan: membuat satu kartu untuk setiap foto di daftar
-    for (var i = 0; i < daftarFoto.length; i++) {
-      var foto = daftarFoto[i];
-
-      var kartu = document.createElement("div");
-      kartu.className = "card";
-
-      var gambar = document.createElement("img");
-      gambar.src = folderGambar + foto.file;
-      gambar.alt = foto.alt;
-
-      var teks = document.createElement("p");
-      teks.textContent = foto.keterangan;
-
-      kartu.appendChild(gambar);
-      kartu.appendChild(teks);
-      galeri.appendChild(kartu);
-    }
-  </script>
 
 </body>
 </html>
