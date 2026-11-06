@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 07 - Pseudo-class :hover</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      padding: 30px 16px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+
+    /* Wadah kartu memakai flexbox */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Kondisi awal kartu, transition dipasang di sini
+       supaya animasi halus saat kursor masuk dan keluar */
+    .card {
+      flex: 0 1 300px;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card p {
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #475569;
+    }
+
+    /* Pseudo-class :hover, aktif saat kursor berada di atas kartu */
+    .card:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: rgba(249, 115, 22, 0.4);
+      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.18),
+                  0 0 14px rgba(251, 146, 60, 0.28);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galeri Patung</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="gambar/patung-kayu-anak.jpg" alt="Patung kayu anak berhelm merah dengan kacamata kuning">
+      <p>Patung kayu anak berhelm merah dengan kacamata kuning, berdiri di atas alas kayu, dikelilingi patung kecil di rak dinding</p>
+    </div>
+
+    <div class="card">
+      <img src="gambar/candi-borobudur-logam.jpg" alt="Patung logam gelap berbentuk candi dengan banyak stupa">
+      <p>Patung logam gelap berbentuk candi dengan banyak stupa berlubang, bagian bawahnya menjuntai seperti jaring</p>
+    </div>
+
+    <div class="card">
+      <img src="gambar/patung-keramik-genteng.jpg" alt="Patung keramik berkepala manusia dengan genteng motif biru putih">
+      <p>Patung keramik berkepala manusia bertudung tanah liat, bertubuh genteng motif biru putih dan dikelilingi bantal keramik</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
