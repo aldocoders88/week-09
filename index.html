@@ -283,6 +283,8 @@
       flex: 1;
     }
 
+    /* Dynamic injected styles for live hover rule */
+    <style id="dynamic-hover-rules"></style>
   </style>
   <!-- Tempat inject CSS runtime untuk efek hover -->
   <style id="runtime-hover-css"></style>
@@ -478,18 +480,63 @@
         <div class="target-flex-container">
           
           <div class="target-card" id="card-1">
-            <img src="gambar/patung-kayu-anak.jpg" alt="Patung kayu anak berhelm merah dengan kacamata kuning">
-            <p>Patung kayu anak berhelm merah dengan kacamata kuning, berdiri di atas alas kayu, dikelilingi patung kecil di rak dinding</p>
+            <img src="images-uniform/uniform-01-800x600.jpg" alt="Seseorang memegang kamera digital retro Fujifilm X100 silver">
+            <p>Seseorang memegang kamera digital retro Fujifilm X100 silver dengan strap kulit tergantung di leher</p>
           </div>
 
           <div class="target-card">
-            <img src="gambar/candi-borobudur-logam.jpg" alt="Patung logam gelap berbentuk candi dengan banyak stupa">
-            <p>Patung logam gelap berbentuk candi dengan banyak stupa berlubang, bagian bawahnya menjuntai seperti jaring</p>
+            <img src="images-uniform/uniform-05-800x600.jpg" alt="Depo stasiun perkeretaapian barang saat matahari terbit keemasan">
+            <p>Depo stasiun perkeretaapian barang dengan puluhan jalur rel dan gerbong tangki saat matahari terbit keemasan</p>
           </div>
 
           <div class="target-card">
-            <img src="gambar/patung-keramik-genteng.jpg" alt="Patung keramik berkepala manusia dengan genteng motif biru putih">
-            <p>Patung keramik berkepala manusia bertudung tanah liat, bertubuh genteng motif biru putih dan dikelilingi bantal keramik</p>
+            <img src="images-uniform/uniform-11-800x600.jpg" alt="Dermaga kayu panjang menjorok ke danau pegunungan berair jernih">
+            <p>Dermaga kayu panjang menjorok ke danau pegunungan berair jernih dengan latar hutan pinus dan pegunungan Alpen</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-14-800x600.jpg" alt="Gulungan jerami gandum silinder di ladang pertanian berkabut">
+            <p>Gulungan jerami gandum (hay bales) silinder di ladang pertanian berkabut tebal di pagi hari</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-22-800x600.jpg" alt="Puncak gunung Matterhorn bersalju megah">
+            <p>Puncak gunung Matterhorn bersalju megah dengan awan putih melingkar di sekeliling puncaknya</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-26-800x600.jpg" alt="Induk beruang cokelat grizzly berjalan bersama dua anaknya">
+            <p>Induk beruang cokelat grizzly berjalan bersama dua anak beruangnya di punggung bukit berbatu bersalju</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-32-800x600.jpg" alt="Haluan perahu kano kayu dengan dayung bersandar di tepi danau">
+            <p>Haluan perahu kano kayu dengan dayung bersandar di antara dedaunan hijau di tepi danau berkilau</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-42-800x600.jpg" alt="Bintang jatuh meluncur melintasi galaksi Bima Sakti">
+            <p>Bintang jatuh (meteor) meluncur melintasi galaksi Bima Sakti di langit malam berbintang biru tua pekat</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-02-800x600.jpg" alt="Rel kereta api tepi pantai memanjang lurus">
+            <p>Rel kereta api tepi pantai memanjang lurus dengan deburan ombak laut biru di sebelahnya</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-09-800x600.jpg" alt="Kincir angin turbin listrik di atas perbukitan hijau">
+            <p>Kincir angin turbin listrik penghasil energi ramah lingkungan di atas perbukitan hijau cerah</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-13-800x600.jpg" alt="Papan selancar tergeletak di pasir pantai saat sunset">
+            <p>Papan selancar kayu tergeletak santai di atas pasir pantai dengan siluet mentari terbenam</p>
+          </div>
+
+          <div class="target-card">
+            <img src="images-uniform/uniform-36-800x600.jpg" alt="Pemandian air panas Blue Lagoon Islandia dengan uap mengepul">
+            <p>Pemandian air panas geotermal Blue Lagoon Islandia dengan air biru susu dan uap putih mengepul</p>
           </div>
 
         </div>
@@ -499,137 +546,3 @@
   </div>
 
   <script>
-    // State Aplikasi
-    const state = {
-      forceHover: 'mouse',
-      translateY: '-4px',
-      scale: '1.03',
-      rotate: '0deg',
-      boxShadow: '0 10px 24px rgba(249, 115, 22, 0.18), 0 0 14px rgba(251, 146, 60, 0.28)',
-      borderColor: 'rgba(249, 115, 22, 0.4)',
-      duration: '0.25s',
-      timingFn: 'ease'
-    };
-
-    const runtimeStyle = document.getElementById('runtime-hover-css');
-    const card1 = document.getElementById('card-1');
-
-    function buildTransformString() {
-      const parts = [];
-      if (state.translateY && state.translateY !== '0px') {
-        parts.push(`translateY(${state.translateY})`);
-      }
-      if (state.scale && state.scale !== '1' && state.scale !== '1.00') {
-        parts.push(`scale(${state.scale})`);
-      }
-      if (state.rotate && state.rotate !== '0deg') {
-        parts.push(`rotate(${state.rotate})`);
-      }
-      return parts.length > 0 ? parts.join(' ') : 'none';
-    }
-
-    function applyStyles() {
-      const transformStr = buildTransformString();
-
-      // Buat rule CSS runtime untuk .target-card dan .target-card:hover
-      const cssRules = `
-        .target-card {
-          transition: transform ${state.duration} ${state.timingFn},
-                      box-shadow ${state.duration} ${state.timingFn},
-                      border-color ${state.duration} ${state.timingFn} !important;
-        }
-
-        .target-card:hover {
-          transform: ${transformStr} !important;
-          box-shadow: ${state.boxShadow} !important;
-          border-color: ${state.borderColor} !important;
-          z-index: 10;
-        }
-
-        .forced-hover {
-          transform: ${transformStr} !important;
-          box-shadow: ${state.boxShadow} !important;
-          border-color: ${state.borderColor} !important;
-          z-index: 10;
-        }
-      `;
-
-      runtimeStyle.textContent = cssRules;
-
-      // Handle opsi simulasi Force Hover pada kartu pertama
-      if (state.forceHover === 'forced') {
-        card1.classList.add('forced-hover');
-      } else {
-        card1.classList.remove('forced-hover');
-      }
-
-      // Update Teks Panel Kode CSS
-      document.getElementById('css-val-dur1').textContent = state.duration;
-      document.getElementById('css-val-dur2').textContent = state.duration;
-      document.getElementById('css-val-dur3').textContent = state.duration;
-      document.getElementById('css-val-tf1').textContent = state.timingFn;
-      document.getElementById('css-val-tf2').textContent = state.timingFn;
-      document.getElementById('css-val-tf3').textContent = state.timingFn;
-
-      document.getElementById('css-val-transform').textContent = transformStr;
-      document.getElementById('css-val-border-color').textContent = state.borderColor;
-      document.getElementById('css-val-box-shadow').textContent = state.boxShadow;
-    }
-
-    // Hubungkan kontrol input manual dan tombol preset
-    const controls = [
-      { key: 'force-hover', inputId: null, stateProp: 'forceHover' },
-      { key: 'translate-y', inputId: 'input-translate-y', stateProp: 'translateY' },
-      { key: 'scale', inputId: 'input-scale', stateProp: 'scale' },
-      { key: 'rotate', inputId: 'input-rotate', stateProp: 'rotate' },
-      { key: 'box-shadow', inputId: 'input-box-shadow', stateProp: 'boxShadow' },
-      { key: 'border-color', inputId: 'input-border-color', stateProp: 'borderColor' },
-      { key: 'transition-duration', inputId: 'input-transition-duration', stateProp: 'duration' },
-      { key: 'timing-fn', inputId: 'input-timing-fn', stateProp: 'timingFn' }
-    ];
-
-    controls.forEach(({ key, inputId, stateProp }) => {
-      const inputEl = inputId ? document.getElementById(inputId) : null;
-      const btnGroup = document.querySelector(`.btn-group[data-target="${key}"]`);
-
-      // Ketik manual pada input
-      if (inputEl) {
-        inputEl.addEventListener('input', (e) => {
-          const val = e.target.value.trim();
-          state[stateProp] = val;
-
-          if (btnGroup) {
-            const btns = btnGroup.querySelectorAll('button');
-            btns.forEach(btn => {
-              if (btn.getAttribute('data-val') === val) {
-                btn.classList.add('active');
-              } else {
-                btn.classList.remove('active');
-              }
-            });
-          }
-          applyStyles();
-        });
-      }
-
-      // Klik tombol preset
-      if (btnGroup) {
-        const btns = btnGroup.querySelectorAll('button');
-        btns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            btns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const val = btn.getAttribute('data-val');
-            if (inputEl) inputEl.value = val;
-            state[stateProp] = val;
-            applyStyles();
-          });
-        });
-      }
-    });
-
-    // Inisialisasi awal
-    applyStyles();
-  </script>
-</body>
-</html>
